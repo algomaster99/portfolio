@@ -1,0 +1,15 @@
+{
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "extends": "stylelint-config-sass-guidelines",
+    "rules": {
+      "block-opening-brace-space-before": "never",
+      "color-hex-length": "long",
+      "declaration-block-trailing-semicolon": "never",
+      "indentation": 2,
+      "selector-combinator-space-after": "always",
+      "selector-combinator-space-before": "always",
+      "selector-list-comma-newline-after": "never-multi-line"
+    }
+  }
