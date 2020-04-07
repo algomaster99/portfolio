@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './App.sass'
+import '../styles/App.sass'
 
 interface Props {
   firstName: string;
