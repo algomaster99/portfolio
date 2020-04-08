@@ -9,7 +9,7 @@ const config: webpack.Configuration = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx', '.d.ts', '.sass'],
   },
   module: {
     rules: [
@@ -27,7 +27,11 @@ const config: webpack.Configuration = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              localsConvention: 'camelCaseOnly',
+              modules: {
+                localIdentName: '[path][local]__[hash:base64:5]',
+              },
+              importLoaders: 2,
             },
           },
           'sass-loader',
@@ -36,7 +40,6 @@ const config: webpack.Configuration = {
     ],
   },
   devServer: {
-    compress: true,
     port: 3000,
   },
   plugins: [

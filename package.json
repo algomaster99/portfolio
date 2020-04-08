@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "code-format": "eslint */**/*.{ts,tsx} --fix",
-    "style-format": "stylelint src/style/*.sass --fix --custom-syntax sugarss"
+    "style-format": "stylelint src/**/**/*.sass --fix --custom-syntax sugarss"
   },
   "repository": {
     "type": "git",
