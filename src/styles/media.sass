@@ -1,10 +1,44 @@
-$tablet-width: 768px
-$desktop-width: 1024px
+@use 'src/consts'
 
-@mixin tablet
-  @media (min-width: #{table-width}) and (max-width: #{$desktop-width - 1px})
-    @content
+// SASS doesn't support multiline maps :(
+$breakpoints: (sm: consts.$mobile, md: consts.$tablet, lg: consts.$desktop)
 
-@mixin desktop 
-  @media (min-width: #{$desktop-width})
-    @content
+
+// Responds above a particular breakpoint
+@mixin respond-above($breakpoint)
+
+  @if map-has-key($breakpoints, $breakpoint)
+    $breakpoint-value: map-get($breakpoints, $breakpoint)
+    @media (min-width: $breakpoint-value)
+      @content
+
+  @else 
+    @error 'Invalid breakpoint: #{$breakpoint}'
+
+
+// Responds below a particular breakpoint
+@mixin respond-below($breakpoint)
+
+  @if map-has-key($breakpoints, $breakpoint)
+    $breakpoint-value: map-get($breakpoints, $breakpoint)
+    @media (max-width: $breakpoint-value)
+      @content
+
+  @else 
+    @error 'Invalid breakpoint: #{$breakpoint}'
+
+
+// Responds between two breakpoints
+@mixin respond-between($lower, $upper)
+
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper)
+    $lower-breakpoint: map-get($breakpoints, $lower)
+    $upper-breakpoint: map-get($breakpoints, $upper)
+    @media (min-width: $lower-breakpoint) and (max-width: $upper-breakpoint)
+      @content
+
+  @else
+    @if not map-has-key($breakpoints, $lower)
+      @error 'Lower breakpoint is invalid: #{$lower}.'
+    @if not map-has-key($breakpoints, $upper)
+      @error 'Upper breakpoint is invalid: #{$upper}.'
