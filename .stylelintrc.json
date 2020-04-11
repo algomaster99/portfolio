@@ -8,6 +8,7 @@
       "color-hex-length": "long",
       "declaration-block-trailing-semicolon": "never",
       "indentation": 2,
+      "max-nesting-depth": 2,
       "scss/dollar-variable-pattern": "[a-zA-Z0-9]+",
       "selector-combinator-space-after": "always",
       "selector-combinator-space-before": "always",
