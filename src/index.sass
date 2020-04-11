@@ -3,3 +3,8 @@
 
 @at-root :root
   font-family: consts.$font-family
+
+// Pass `#root`to `:global` to use the ID `#root` as is otherwise it gets
+// hashed by webpack.
+@at-root html, body, :global(#root)
+  height: 100%
