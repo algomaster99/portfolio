@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { ChangeEventHandler } from 'react'
 
+import ThemeSwitch from '../theme-switch'
 import { SHORT_NAME } from '../../consts'
 
+import container from '../../styles/container.sass'
 import styles from './index.sass'
 
-class Header extends React.PureComponent {
+interface Props {
+  checked: boolean
+  themeChange: ChangeEventHandler
+}
+
+class Header extends React.PureComponent<Props> {
   render(): JSX.Element {
     return (
-      <div>
-        <div className={styles.shortName}>{SHORT_NAME}</div>
+      <div className={styles.headerContainer}>
+        <div className={container.container}>
+          <div className={styles.headerTitle}>
+            <div className={styles.shortName}>{SHORT_NAME}</div>
+            <ThemeSwitch
+              themeChange={this.props.themeChange}
+              checked={this.props.checked}
+            />
+          </div>
+        </div>
       </div>
     )
   }

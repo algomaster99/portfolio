@@ -1,0 +1,6 @@
+@use 'src/consts'
+
+@mixin transition($td: consts.$transistion-duration, $transition...)
+  // https://github.com/postcss/autoprefixer
+  // Above package takes care of the vendor prefixes
+  transition: #{$td} $transition

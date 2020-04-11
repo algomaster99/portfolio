@@ -1,3 +1,16 @@
+@use 'src/styles/theme'
+
+.header-container
+  background: transparent
+  padding: 76px 0 0
+  top: 0
+  width: 100%
+
+.header-title
+  display: flex
+  justify-content: space-between
+
 .short-name
+  @include theme.which-theme('color', 'short-name')
   letter-spacing: 12px
   text-transform: uppercase

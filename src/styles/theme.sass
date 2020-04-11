@@ -1,0 +1,6 @@
+@use 'src/styles/colour-palette.scss'
+
+@mixin which-theme($property, $value)
+  @each $theme, $color in colour-palette.$themes
+    :global(.theme-#{$theme}) &
+      #{$property}: map-get(map-get(colour-palette.$themes, $theme), $value)

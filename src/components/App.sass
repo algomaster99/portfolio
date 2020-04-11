@@ -1,27 +1,7 @@
-@use 'src/styles/media'
-@use 'src/consts'
+@use 'src/styles/theme'
+@use 'src/styles/transition'
 
-$max-width: 100%
-
-.container
-  display: block
-  max-width: $max-width
-
-@include media.respond-below(sm)
-  .container
-    margin: consts.$mobile-gutter
-
-@include media.respond-between(sm, md)
-  .container
-    width: consts.$tablet-width
-    margin: consts.$tablet-gutter
-
-@include media.respond-between(md, lg)
-  .container
-    width: consts.$desktop-width
-    margin: consts.$desktop-gutter
-
-@include media.respond-above(lg)
-  .container
-    margin: consts.$large-monitor-gutter
-    width: consts.$large-monitor-width
+.theme-manipulator
+  @include theme.which-theme('background-color', 'app-background')
+  @include transition.transition(1s, background-color)
+  height: 100%

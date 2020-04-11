@@ -13,13 +13,13 @@ $max-width: 100%
 
 @include media.respond-between(sm, md)
   .container
-    width: consts.$tablet-width
     margin: consts.$tablet-gutter
+    width: consts.$tablet-width
 
 @include media.respond-between(md, lg)
   .container
-    width: consts.$desktop-width
     margin: consts.$desktop-gutter
+    width: consts.$desktop-width
 
 @include media.respond-above(lg)
   .container

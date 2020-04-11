@@ -1,0 +1,40 @@
+@use 'src/styles/theme'
+@use 'src/styles/transition'
+
+$toggle-height: 20px
+$toggle-width: $toggle-height * 2
+
+$thumb-margin: 2px
+$thumb-size: $toggle-height - ($thumb-margin * 2)
+
+.toggle-wrapper
+  @include theme.which-theme('background-color', 'toggle-container-background')
+  @include transition.transition(1s, all)
+  align-items: center
+  border-bottom-left-radius: $toggle-height * 0.5
+  border-bottom-right-radius: $toggle-height * 0.5
+  border-top-left-radius: $toggle-height * 0.5
+  border-top-right-radius: $toggle-height * 0.5
+  display: flex
+  height: $toggle-height
+  width: $toggle-width
+
+.toggle-thumb
+  @include theme.which-theme('background-color', 'toggle-thumb-background')
+  @include transition.transition(1s, all)
+  border-radius: 50%
+  height: $thumb-size
+  left: 0
+  margin-left: ($toggle-height - $thumb-size) / 2
+  position: relative
+  width: $thumb-size
+
+/* stylelint-disable max-nesting-depth */
+.toggle-checkbox
+  display: none
+
+  &:checked
+    + .toggle-wrapper
+      .toggle-thumb
+        left: $toggle-width / 2
+/* stylelint-enable max-nesting-depth */
