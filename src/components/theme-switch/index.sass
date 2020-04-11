@@ -1,3 +1,4 @@
+@use 'src/consts'
 @use 'src/styles/theme'
 @use 'src/styles/transition'
 
@@ -9,7 +10,7 @@ $thumb-size: $toggle-height - ($thumb-margin * 2)
 
 .toggle-wrapper
   @include theme.which-theme('background-color', 'toggle-container-background')
-  @include transition.transition(1s, all)
+  @include transition.transition(consts.$transition-duration/2, all)
   align-items: center
   border-bottom-left-radius: $toggle-height * 0.5
   border-bottom-right-radius: $toggle-height * 0.5
@@ -21,7 +22,7 @@ $thumb-size: $toggle-height - ($thumb-margin * 2)
 
 .toggle-thumb
   @include theme.which-theme('background-color', 'toggle-thumb-background')
-  @include transition.transition(1s, all)
+  @include transition.transition(consts.$transition-duration/2, all)
   border-radius: 50%
   height: $thumb-size
   left: 0
