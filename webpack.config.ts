@@ -9,7 +9,7 @@ const config: webpack.Configuration = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.d.ts', '.sass'],
+    extensions: ['.js', '.ts', '.tsx', '.d.ts'],
   },
   module: {
     rules: [
@@ -36,6 +36,10 @@ const config: webpack.Configuration = {
           },
           'sass-loader',
         ],
+      },
+      {
+        test: /\.jpe?g$/i,
+        use: 'file-loader',
       },
     ],
   },
