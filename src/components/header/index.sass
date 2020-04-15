@@ -1,8 +1,13 @@
+@use 'src/consts'
 @use 'src/styles/theme'
+@use 'src/styles/transition'
 
 .header-container
+  align-items: flex-end
   background: transparent
-  padding: 76px 0 0
+  display: flex
+  height: consts.$header-height
+  position: absolute
   top: 0
   width: 100%
 
@@ -12,5 +17,6 @@
 
 .short-name
   @include theme.which-theme('color', 'short-name')
+  @include transition.transition(consts.$transition-duration, color)
   letter-spacing: 12px
   text-transform: uppercase
