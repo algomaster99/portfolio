@@ -20,6 +20,7 @@ $rotate-deg: 45deg
 .image-cropper
   align-items: center
   display: flex
+  flex-shrink: 0 // By default, Chrome sets flex-shrink to 1 (:face-palm:)
   height: #{$side}px
   overflow: hidden
   position: relative
@@ -38,6 +39,7 @@ $rotate-deg: 45deg
   font-size: 3.75em
   letter-spacing: 8px
   margin-top: 1em
+  text-align: center
   text-transform: uppercase
 
 .short-bio
