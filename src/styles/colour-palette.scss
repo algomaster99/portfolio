@@ -1,6 +1,9 @@
 $themes: (
   light: (
     app-background: #ffffff,
+    content: #4d4d4d,
+    main-button-background: #ffd436,
+    header: #0a0404,
     short-name: #0a0404,
     toggle-container-background: #10dde3,
     toggle-thumb-background: #ffd700
@@ -8,6 +11,9 @@ $themes: (
 
   dark: (
     app-background: #0a0404,
+    content: #ebebeb,
+    main-button-background: #10dde3, 
+    header: #10dde3,
     short-name: #ffffff,
     toggle-container-background: #01528c,
     toggle-thumb-background: #f7f7f7

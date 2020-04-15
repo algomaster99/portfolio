@@ -1,8 +1,10 @@
 import React, { ChangeEventHandler, ChangeEvent } from 'react'
 
 import Header from './header'
+import Cover from './cover'
 import { THEME } from '../consts'
 
+import container from '../styles/container.sass'
 import styles from './App.sass'
 
 interface State {
@@ -29,7 +31,12 @@ class App extends React.PureComponent<{}, State> {
     return (
       <div className={`theme-${this.state.theme}`} style={{ height: '100%' }}>
         <div className={styles.themeManipulator}>
+          {/* Header is not put inside the container because the background
+          needed to span over the entire viewport */}
           <Header themeChange={this.themeChange} checked={this.state.checked} />
+          <div className={`${container.container} ${styles.body}`}>
+            <Cover />
+          </div>
         </div>
       </div>
     )

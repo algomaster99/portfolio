@@ -1,0 +1,46 @@
+@use 'sass:math'
+
+@use 'src/consts'
+@use 'src/styles/theme'
+@use 'src/styles/transition'
+
+$crop-size: 240
+$side: $crop-size/math.sqrt(2)
+$rotate-deg: 45deg
+
+.cover-container
+  align-items: center
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  flex-shrink: 0
+  height: 100%
+  justify-content: center
+
+.image-cropper
+  align-items: center
+  display: flex
+  height: #{$side}px
+  overflow: hidden
+  position: relative
+  transform: rotate($rotate-deg)
+  width: #{$side}px
+
+.me
+  left: -24px
+  position: relative
+  transform: rotate(-$rotate-deg)
+  width: 304px
+
+.full-name
+  @include theme.which-theme('color', 'header')
+  @include transition.transition(consts.$transition-duration, color)
+  font-size: 3.75em
+  letter-spacing: 8px
+  margin-top: 1em
+  text-transform: uppercase
+
+.short-bio
+  @include theme.which-theme('color', 'content')
+  @include transition.transition(consts.$transition-duration, color)
+  text-align: center

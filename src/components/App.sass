@@ -1,8 +1,12 @@
 @use 'src/consts'
+@use 'src/styles/height'
 @use 'src/styles/theme'
 @use 'src/styles/transition'
 
 .theme-manipulator
   @include theme.which-theme('background-color', 'app-background')
   @include transition.transition(consts.$transition-duration, background-color)
-  height: 100%
+  @include height.span-height()
+
+.body
+  @include height.span-height()
