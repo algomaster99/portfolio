@@ -18,12 +18,31 @@ class App extends React.PureComponent<{}, State> {
     theme: THEME.DARK,
   }
 
+  componentDidMount(): void {
+    if (localStorage.getItem('theme') === null) {
+      localStorage.setItem('theme', this.state.theme)
+    } else {
+      const theme =
+        localStorage.getItem('theme') === THEME.DARK ? THEME.DARK : THEME.LIGHT
+      const checked = theme === THEME.DARK ? true : false
+      this.setState({
+        checked: checked,
+        theme: theme,
+      })
+    }
+  }
+
   themeChange = (event: ChangeEvent): ChangeEventHandler => {
     const theme: THEME = event.target.checked ? THEME.DARK : THEME.LIGHT
-    this.setState({
-      checked: !this.state.checked,
-      theme: theme,
-    })
+    this.setState(
+      {
+        checked: !this.state.checked,
+        theme: theme,
+      },
+      () => {
+        localStorage.setItem('theme', this.state.theme)
+      }
+    )
     return
   }
 
