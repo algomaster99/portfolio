@@ -1,15 +1,16 @@
 @use 'src/styles/media'
 @use 'src/consts'
 
-$width: 100%
+$max-width: 100%
 
 .container
   display: block
-  width: $width
+  max-width: $max-width
 
 @include media.respond-below(sm)
   .container
     margin: consts.$mobile-gutter
+    width: inherit
 
 @include media.respond-between(sm, md)
   .container
@@ -25,3 +26,15 @@ $width: 100%
   .container
     margin: consts.$large-monitor-gutter
     width: consts.$large-monitor-width
+
+@include media.respond-between(sm, md)
+  .content-container
+    width: consts.$tablet-content-width
+
+@include media.respond-between(md, lg)
+  .content-container
+    width: consts.$desktop-content-width
+
+@include media.respond-above(lg)
+  .content-container
+    width: consts.$large-content-width

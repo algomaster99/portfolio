@@ -53,7 +53,12 @@ class App extends React.PureComponent<{}, State> {
           {/* Header is not put inside the container because the background
           needed to span over the entire viewport */}
           <Header themeChange={this.themeChange} checked={this.state.checked} />
-          <div className={`${container.container} ${styles.body}`}>
+          <div
+            className={`
+              ${container.container} ${container.contentContainer}
+              ${styles.body}
+            `}
+          >
             <Cover />
           </div>
         </div>

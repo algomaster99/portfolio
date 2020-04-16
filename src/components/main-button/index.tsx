@@ -9,9 +9,11 @@ interface Props {
 class MainButton extends React.PureComponent<Props> {
   render(): JSX.Element {
     return (
-      <a href="#" className={styles.mainButton}>
-        {this.props.text}
-      </a>
+      <div className={styles.mainButtonContainer}>
+        <a href="#" className={styles.mainButton}>
+          {this.props.text}
+        </a>
+      </div>
     )
   }
 }

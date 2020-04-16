@@ -1,12 +1,27 @@
 @use 'sass:math'
 
 @use 'src/consts'
+@use 'src/styles/media'
 @use 'src/styles/theme'
 @use 'src/styles/transition'
 
+/* Image styles */
 $crop-size: 240
-$side: $crop-size/math.sqrt(2)
+$side: $crop-size / math.sqrt(2)
 $rotate-deg: 45deg
+
+$crop-size-sm: $crop-size / 1.4
+$side-sm: $crop-size-sm / math.sqrt(2)
+
+$crop-size-md: $crop-size / 1.2
+$side-md: $crop-size-md / math.sqrt(2)
+
+$image-cropper-top: 32px
+
+$image-margin: 0.5em
+
+// Text styles
+$full-name-font-size: 3.75em
 
 .cover-container
   align-items: center
@@ -15,7 +30,7 @@ $rotate-deg: 45deg
   flex-grow: 1
   flex-shrink: 0
   height: 100%
-  justify-content: center
+  justify-content: space-around
 
 .image-cropper
   align-items: center
@@ -36,9 +51,8 @@ $rotate-deg: 45deg
 .full-name
   @include theme.which-theme('color', 'header')
   @include transition.transition(consts.$transition-duration, color)
-  font-size: 3.75em
+  font-size: $full-name-font-size
   letter-spacing: 8px
-  margin-top: 1em
   text-align: center
   text-transform: uppercase
 
@@ -46,3 +60,25 @@ $rotate-deg: 45deg
   @include theme.which-theme('color', 'content')
   @include transition.transition(consts.$transition-duration, color)
   text-align: center
+
+@include media.respond-below(sm)
+  .full-name
+    font-size: $full-name-font-size / 1.3
+
+  .image-cropper
+    // top: $image-cropper-top / 2
+    height: #{$side-sm}px
+    width: #{$side-sm}px
+
+@include media.respond-between(sm, md)
+  .image-cropper
+    height: #{$side-md}px
+    width: #{$side-md}px
+
+@include media.respond-above(lg)
+  .image-cropper
+    margin-top: $image-margin
+
+  .short-bio
+    // compensation for the top margin in cropper
+    margin-top: -$image-margin
