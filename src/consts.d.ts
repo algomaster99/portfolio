@@ -9,3 +9,8 @@ export enum THEME {
   LIGHT = 'light',
   DARK = 'dark',
 }
+
+export enum TYPE {
+  MAIN = 'main',
+  SIDE = 'side',
+}

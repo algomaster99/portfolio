@@ -1,0 +1,24 @@
+@use 'src/consts'
+@use 'src/styles/media'
+@use 'src/styles/theme'
+@use 'src/styles/transition'
+
+.side, .main
+  border-radius: 2px
+  font-weight: bold
+  letter-spacing: 4px
+  padding: 1em 0.8em
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase !important
+
+.main
+  @include theme.which-theme('background-color', 'main-button-background')
+  @include transition.transition(consts.$transition-duration, background-color)
+  color: #0a0404
+
+.side
+  @include theme.which-theme('color', 'side-button-colour')
+  @include transition.transition(consts.$transition-duration, color)
+  background-color: transparent
+  box-shadow: inset 0 0 0 1px
