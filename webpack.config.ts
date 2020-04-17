@@ -2,6 +2,19 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
+/**
+ * Parameters passed through command-line
+ * 
+ * [
+ *   '/usr/local/bin/node',
+ *   'portfolio/node_modules/.bin/webpack-dev-server',
+ *   '--mode',
+ *   'development',
+ *   '--hot'
+ * ]
+ */
+const mode = process.argv[3]
+
 const config: webpack.Configuration = {
   entry: './src/index.tsx',
   output: {
@@ -29,7 +42,8 @@ const config: webpack.Configuration = {
             options: {
               localsConvention: 'camelCaseOnly',
               modules: {
-                localIdentName: '[path][local]__[hash:base64:5]',
+                localIdentName:
+                  mode === 'production' ? '[hash:base64]' : '[path][local]',
               },
               importLoaders: 2,
             },
