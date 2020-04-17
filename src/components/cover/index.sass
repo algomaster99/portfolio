@@ -6,7 +6,7 @@
 @use 'src/styles/transition'
 
 /* Image styles */
-$crop-size: 240
+$crop-size: 248
 $side: $crop-size / math.sqrt(2)
 $rotate-deg: 45deg
 
@@ -16,27 +16,19 @@ $side-sm: $crop-size-sm / math.sqrt(2)
 $crop-size-md: $crop-size / 1.2
 $side-md: $crop-size-md / math.sqrt(2)
 
-$image-cropper-top: 32px
-
-$image-margin: 0.5em
-
-// Text styles
-$full-name-font-size: 3.75em
+// Due to rotating the `image-cropper`
+$margin-error: 20px
 
 .cover-container
-  align-items: center
-  display: flex
-  flex-direction: column
-  flex-grow: 1
-  flex-shrink: 0
   height: 100%
-  justify-content: space-around
 
 .image-cropper
   align-items: center
   display: flex
   flex-shrink: 0 // By default, Chrome sets flex-shrink to 1 (:face-palm:)
   height: #{$side}px
+  margin: 0 auto
+  margin-top: 20px + $margin-error
   overflow: hidden
   position: relative
   transform: rotate($rotate-deg)
@@ -51,34 +43,54 @@ $full-name-font-size: 3.75em
 .full-name
   @include theme.which-theme('color', 'header')
   @include transition.transition(consts.$transition-duration, color)
-  font-size: $full-name-font-size
+  font-size: 3.75em
+  font-weight: bold
   letter-spacing: 8px
+  line-height: 76px
+  margin-top: 1.5em
   text-align: center
   text-transform: uppercase
 
 .short-bio
   @include theme.which-theme('color', 'content')
   @include transition.transition(consts.$transition-duration, color)
+  font-size: 1.5em
+  line-height: 36px
   text-align: center
+
+.cover-button
+  display: flex
+  justify-content: center
+  margin-top: 2.5em
+  width: 100%
 
 @include media.respond-below(sm)
   .full-name
-    font-size: $full-name-font-size / 1.3
+    font-size: 2em
+    line-height: 38px
+
+  .short-bio
+    font-size: 1em
+    line-height: 24px
 
   .image-cropper
-    // top: $image-cropper-top / 2
     height: #{$side-sm}px
     width: #{$side-sm}px
+
+  .cover-button
+    margin-top: 5.625em
+
+    a
+      width: 100%
+
+@include media.respond-below(sm)
+  .image-cropper
+    margin-top: 60px + $margin-error
+  
+  .full-name
+    margin-top: 2em
 
 @include media.respond-between(sm, md)
   .image-cropper
     height: #{$side-md}px
     width: #{$side-md}px
-
-@include media.respond-above(lg)
-  .image-cropper
-    margin-top: $image-margin
-
-  .short-bio
-    // compensation for the top margin in cropper
-    margin-top: -$image-margin
