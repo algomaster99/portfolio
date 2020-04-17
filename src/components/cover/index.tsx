@@ -1,7 +1,7 @@
 import React from 'react'
 
-import MainButton from '../main-button'
-import { FULL_NAME, SHORT_BIO } from '../../consts'
+import Button from '../button'
+import { FULL_NAME, SHORT_BIO, TYPE } from '../../consts'
 
 import me from '../../assets/me.jpeg'
 import styles from './index.sass'
@@ -15,7 +15,9 @@ class Cover extends React.PureComponent {
         </div>
         <div className={styles.fullName}>{FULL_NAME}</div>
         <div className={styles.shortBio}>{SHORT_BIO}</div>
-        <MainButton text="view résumé" />
+        <div className={styles.coverButton}>
+          <Button type={TYPE.MAIN} text="view résumé" />
+        </div>
       </div>
     )
   }

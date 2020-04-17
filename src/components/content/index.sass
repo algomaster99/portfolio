@@ -1,0 +1,32 @@
+@use 'src/styles/media'
+
+.experience
+  margin-top: 6.75em
+
+.tech-skills
+  margin-top: 3.75em
+
+.not-tech-skills
+  margin-top: 6em
+
+.project-request
+  margin-top: 6em
+
+.button-container
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 6.5em
+  margin-top: 2.5em
+  width: 100%
+
+  a
+    margin-right: 1em
+
+@include media.respond-below(sm)
+  .button-container
+    margin-bottom: 2.25em
+
+    a
+      margin-bottom: 1em
+      margin-right: unset
+      width: 100%

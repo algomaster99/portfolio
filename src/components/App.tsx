@@ -2,6 +2,7 @@ import React, { ChangeEventHandler, ChangeEvent } from 'react'
 
 import Header from './header'
 import Cover from './cover'
+import Content from './content'
 import { THEME } from '../consts'
 
 import container from '../styles/container.sass'
@@ -55,11 +56,11 @@ class App extends React.PureComponent<{}, State> {
           <Header themeChange={this.themeChange} checked={this.state.checked} />
           <div
             className={`
-              ${container.container} ${container.contentContainer}
-              ${styles.body}
+            ${container.container} ${container.contentContainer}
             `}
           >
             <Cover />
+            <Content />
           </div>
         </div>
       </div>

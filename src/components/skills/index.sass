@@ -1,0 +1,13 @@
+@use 'src/consts'
+@use 'src/styles/theme'
+@use 'src/styles/transition'
+
+.logo-container
+  display: flex
+  margin-top: 2.5em
+
+.icon
+  @include theme.which-theme('fill', 'icon-colour')
+  @include transition.transition(consts.$transition-duration, all)
+  height: 44px
+  margin-right: 2em

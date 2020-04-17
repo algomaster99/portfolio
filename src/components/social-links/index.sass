@@ -1,0 +1,29 @@
+@use 'src/consts'
+@use 'src/styles/transition'
+@use 'src/styles/theme'
+
+.more-info
+  @include transition.transition(consts.$transition-duration, color)
+  @include theme.which-theme('color', 'content')
+  margin-top: 1.25em
+
+.link-container
+  margin-top: 0.5em
+
+  a
+    @include theme.which-theme('color', 'content-link')
+    @include transition.transition(consts.$transition-duration, color)
+    text-decoration: none
+
+.period
+  @include theme.which-theme('background-color', 'dot-colour')
+  @include transition.transition(consts.$transition-duration, background-color)
+  border-radius: 1px
+  display: inline-block
+  height: 4px
+  margin: 0 0.75em
+  vertical-align: middle
+  width: 4px
+
+  &:last-of-type
+    display: none
