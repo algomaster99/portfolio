@@ -1,0 +1,33 @@
+@use 'src/consts'
+@use 'src/styles/media'
+@use 'src/styles/theme'
+@use 'src/styles/transition'
+
+.header
+  @include theme.which-theme('color', 'content-header')
+  @include transition.transition(consts.$transition-duration, color)
+  font-size: 1.5em
+  font-weight: bold
+  line-height: 30px
+  text-transform: uppercase
+
+.content, .content-without-header
+  @include theme.which-theme('color', 'content')
+  @include transition.transition(consts.$transition-duration, color)
+  line-height: 24px
+  text-align: justify
+
+  a
+    @include theme.which-theme('color', 'content-link')
+    @include transition.transition(consts.$transition-duration, color)
+    text-decoration: none
+
+.content
+  margin-top: 1.25em
+
+.content-without-header
+  margin-top: 0.75em
+
+@include media.respond-below(sm)
+  .header
+    font-size: 1em
