@@ -38,7 +38,7 @@ const config: webpack.Configuration = {
         ],
       },
       {
-        test: /\.jpe?g$/i,
+        test: /\.(jpe?g|svg)$/i,
         use: 'file-loader',
       },
     ],
