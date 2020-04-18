@@ -2,18 +2,19 @@
 @use 'src/styles/media'
 @use 'src/styles/theme'
 @use 'src/styles/transition'
+@use 'src/styles/link'
 
 .footer-container
   bottom: 0
   height: 180px
 
+  @include link.set-link-style(a)
+    text-transform: capitalize
+
 .footer-text
   @include theme.which-theme('color', 'content')
   @include transition.transition(consts.$transition-duration, color)
   font-size: 0.75em
-
-.footer-full-name
-  text-transform: capitalize
 
 @include media.respond-below(sm)
   .footer-container

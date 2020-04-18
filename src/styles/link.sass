@@ -1,0 +1,10 @@
+@use 'src/consts'
+@use 'src/styles/theme'
+@use 'src/styles/transition'
+
+@mixin set-link-style($element)
+  #{$element}
+    @include theme.which-theme('color', 'content-link')
+    @include transition.transition(consts.$transition-duration, color)
+    text-decoration: none
+    @content

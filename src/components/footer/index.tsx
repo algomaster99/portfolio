@@ -1,31 +1,18 @@
 import React from 'react'
 
-import { FULL_NAME } from '../../consts'
+import { DESIGNER, DESIGNER_LINK } from '../../consts'
 
 import styles from './index.sass'
 
-interface State {
-  year: number | string
-}
-
-class Footer extends React.PureComponent<{}, State> {
-  state = {
-    year: '',
-  }
-
-  componentDidMount(): void {
-    const date = new Date()
-    this.setState({
-      year: date.getFullYear(),
-    })
-  }
-
+class Footer extends React.PureComponent {
   render(): JSX.Element {
     return (
       <footer className={styles.footerContainer}>
         <span className={styles.footerText}>
-          Copyright <span className={styles.footerFullName}>{FULL_NAME}</span>{' '}
-          {this.state.year}
+          Designed by{' '}
+          <a href={DESIGNER_LINK} target="_blank" rel="noopener noreferrer">
+            {DESIGNER}
+          </a>{' '}
         </span>
       </footer>
     )

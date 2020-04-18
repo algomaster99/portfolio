@@ -2,6 +2,7 @@
 @use 'src/styles/media'
 @use 'src/styles/theme'
 @use 'src/styles/transition'
+@use 'src/styles/link'
 
 .header
   @include theme.which-theme('color', 'content-header')
@@ -14,12 +15,8 @@
 .content, .content-without-header
   @include theme.which-theme('color', 'content')
   @include transition.transition(consts.$transition-duration, color)
+  @include link.set-link-style(a)
   line-height: 24px
-
-  a
-    @include theme.which-theme('color', 'content-link')
-    @include transition.transition(consts.$transition-duration, color)
-    text-decoration: none
 
 .content
   margin-top: 1.25em

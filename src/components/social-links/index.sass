@@ -1,6 +1,7 @@
 @use 'src/consts'
 @use 'src/styles/transition'
 @use 'src/styles/theme'
+@use 'src/styles/link'
 
 .more-info
   @include transition.transition(consts.$transition-duration, color)
@@ -8,12 +9,8 @@
   margin-top: 1.25em
 
 .link-container
+  @include link.set-link-style(a)
   margin-top: 0.5em
-
-  a
-    @include theme.which-theme('color', 'content-link')
-    @include transition.transition(consts.$transition-duration, color)
-    text-decoration: none
 
 .period
   @include theme.which-theme('background-color', 'dot-colour')
