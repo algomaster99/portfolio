@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler, ChangeEvent } from 'react'
 
 import Header from './header'
+import Overlay from './overlay'
 import Cover from './cover'
 import Content from './content'
 import { THEME } from '../consts'
@@ -50,6 +51,7 @@ class App extends React.PureComponent<{}, State> {
   render(): JSX.Element {
     return (
       <div className={`theme-${this.state.theme}`} style={{ height: '100%' }}>
+        <Overlay />
         <div className={styles.themeManipulator}>
           {/* Header is not put inside the container because the background
           needed to span over the entire viewport */}

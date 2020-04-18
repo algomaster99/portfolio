@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler } from 'react'
 
 import ThemeSwitch from '../theme-switch'
+import Diamond from '../diamond'
 import { SHORT_NAME } from '../../consts'
 
 import container from '../../styles/container.sass'
@@ -18,6 +19,7 @@ class Header extends React.PureComponent<Props> {
         <div className={container.container}>
           <div className={styles.headerTitle}>
             <div className={styles.shortName}>{SHORT_NAME}</div>
+            <Diamond styleName={styles.headerDiamond} />
             <ThemeSwitch
               themeChange={this.props.themeChange}
               checked={this.props.checked}

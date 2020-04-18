@@ -22,12 +22,12 @@ class Footer extends React.PureComponent<{}, State> {
 
   render(): JSX.Element {
     return (
-      <div className={styles.footerContainer}>
+      <footer className={styles.footerContainer}>
         <span className={styles.footerText}>
           Copyright <span className={styles.footerFullName}>{FULL_NAME}</span>{' '}
           {this.state.year}
         </span>
-      </div>
+      </footer>
     )
   }
 }
