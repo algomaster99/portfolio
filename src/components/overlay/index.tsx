@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Diamond from '../diamond'
+import { THEME } from '../../consts'
 
 import styles from './index.sass'
 
@@ -50,7 +51,7 @@ class Overlay extends React.PureComponent {
   }
 
   componentDidMount(): void {
-    this.diamondPlacer()
+    setTimeout(this.diamondPlacer)
     window.addEventListener('resize', this.diamondPlacer)
   }
 
