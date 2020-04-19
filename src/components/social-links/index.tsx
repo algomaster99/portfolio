@@ -11,9 +11,8 @@ class SocialLinks extends React.PureComponent {
         <div className={styles.moreInfo}>You can follow me for more on</div>
         <div className={styles.linkContainer}>
           {LINKS.map((linkInfo, index) => (
-            <>
+            <React.Fragment key={index}>
               <a
-                key={index}
                 href={linkInfo.url}
                 // Security Risk: https://mathiasbynens.github.io/rel-noopener
                 rel="noopener noreferrer"
@@ -22,7 +21,7 @@ class SocialLinks extends React.PureComponent {
                 {linkInfo.site}
               </a>
               <span className={styles.period}></span>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </>
