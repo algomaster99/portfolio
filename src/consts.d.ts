@@ -1,5 +1,6 @@
 export const SHORT_NAME = 'aman'
 export const FULL_NAME = 'aman sharma'
+export const EMAIL = 'asharma@mt.iitr.ac.in'
 export const DESIGNER = 'vineet arora'
 export const DESIGNER_LINK = 'https://dribbble.com/vineetarora'
 export const SHORT_BIO = `A pre-final year undergrad at IIT Roorkee. Student at
@@ -72,5 +73,6 @@ export const NOT_TECHNICAL_SKILLS_2 = `Apart from work, I spend time speaking
 
 export const PROJECT_REQUEST = `I’m currently looking for a summer internship
   in software development. If you have an interesting project for me, let’s
-  talk. You can send me an email at asharma@mt.iitr.ac.in.
+  talk. You can send me an email at
+  <a href="mailto:${EMAIL}">asharma@mt.iitr.ac.in</a>.
 `

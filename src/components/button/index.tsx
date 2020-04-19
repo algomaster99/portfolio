@@ -5,6 +5,8 @@ import { TYPE } from '../../consts'
 import styles from './index.sass'
 
 interface Props {
+  link: string
+  newTab?: boolean
   type: TYPE
   text: string
 }
@@ -21,7 +23,12 @@ class MainButton extends React.PureComponent<Props> {
         break
     }
     return (
-      <a href="#" className={styles[buttonType]}>
+      <a
+        href={this.props.link}
+        className={styles[buttonType]}
+        target={this.props.newTab && '_blank'}
+        rel="noopener noreferrer"
+      >
         {this.props.text}
       </a>
     )

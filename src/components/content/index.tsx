@@ -8,6 +8,7 @@ import Footer from '../footer'
 import {
   EXPERIENCE_1,
   EXPERIENCE_2,
+  EMAIL,
   TECHNICAL_SKILLS_1,
   TECHNICAL_SKILLS_2,
   NOT_TECHNICAL_SKILLS_1,
@@ -16,6 +17,7 @@ import {
   TYPE,
 } from '../../consts'
 
+import resume from '../../assets/resume.pdf'
 import styles from './index.sass'
 
 class Content extends React.PureComponent {
@@ -45,8 +47,8 @@ class Content extends React.PureComponent {
             content={PROJECT_REQUEST}
           />
           <div className={styles.buttonContainer}>
-            <Button type={TYPE.MAIN} text="email me" />
-            <Button type={TYPE.SIDE} text="view résumé" />
+            <Button link={`mailto:${EMAIL}`} type={TYPE.MAIN} text="email me" />
+            <Button link={resume} type={TYPE.SIDE} text="view résumé" newTab />
           </div>
         </div>
         <Footer />
