@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Aman Sharma's slice of internet",
   "main": "index.js",
   "scripts": {
