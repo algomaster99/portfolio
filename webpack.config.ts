@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 /**
  * Parameters passed through command-line
- * 
+ *
  * [
  *   '/usr/local/bin/node',
  *   'portfolio/node_modules/.bin/webpack-dev-server',
@@ -53,7 +53,18 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.(jpe?g|svg|pdf)$/i,
-        use: 'file-loader',
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: (resourcePath): string => {
+              if (/.*\.pdf/.test(resourcePath)) {
+                return '[name].[ext]'
+              } else {
+                return '[contenthash].[ext]'
+              }
+            },
+          },
+        },
       },
     ],
   },
