@@ -11,8 +11,35 @@ $diamond-colour-4: #10dde3
 .overlay-container
   width: 100%
 
-.left-1, .left-2, .left-3, .left-4, .right-1, .right-2, .right-3, .bottom-1, .bottom-2, .bottom-3
+.diamond-1, .diamond-2, .diamond-3, .diamond-4, .left-1, .left-2, .left-3, .left-4, .right-1, .right-2, .right-3, .bottom-1, .bottom-2, .bottom-3
   @include transition.transition(consts.$transition-duration, background-color)
+
+.diamond-1
+  @include theme.which-theme('background-color', 'diamond-colour-5')
+  height: 40px
+  opacity: 0.2
+  top: 180px
+  width: 40px
+
+.diamond-2
+  @include theme.which-theme('background-color', 'diamond-colour-1')
+  height: 40px
+  opacity: 0.2
+  top: 260px
+  width: 40px
+
+.diamond-3
+  @include theme.which-theme('background-color', 'diamond-colour-6')
+  height: 10px
+  opacity: 0.2
+  top: 252px
+  width: 10px
+
+.diamond-4
+  @include theme.which-theme('background-color', 'diamond-colour-1')
+  height: 10px
+  top: 236px
+  width: 10px
 
 .left-1
   @include theme.which-theme('background-color', 'diamond-colour-2')
@@ -90,6 +117,18 @@ $diamond-colour-4: #10dde3
   width: 68px
 
 @include media.respond-below(sm)
+  .diamond-1
+    top: 140px
+
+  .diamond-2
+    top: 208px
+
+  .diamond-3
+    top: 204px
+
+  .diamond-4
+    top: 192px
+
   .left-1, .left-2, .right-3
     display: none
 
@@ -119,6 +158,18 @@ $diamond-colour-4: #10dde3
     left: 100%
 
 @include media.respond-between(sm, md)
+  .diamond-1
+    top: 164px
+
+  .diamond-2
+    top: 240px
+
+  .diamond-3
+    top: 232px
+
+  .diamond-4
+    top: 220px
+
   .left-1
     height: 120px
     right: -40px

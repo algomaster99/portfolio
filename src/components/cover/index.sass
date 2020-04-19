@@ -70,6 +70,7 @@ $margin-error: 20px
     font-size: 2em
     letter-spacing: 0.04em
     line-height: 38px
+    margin-top: 2em
 
   .short-bio
     font-size: 15px
@@ -77,6 +78,7 @@ $margin-error: 20px
 
   .image-cropper
     height: #{$side-sm}px
+    margin-top: 60px + $margin-error
     width: #{$side-sm}px
 
   .cover-button
@@ -84,13 +86,6 @@ $margin-error: 20px
 
     a
       width: 100%
-
-@include media.respond-below(sm)
-  .image-cropper
-    margin-top: 60px + $margin-error
-  
-  .full-name
-    margin-top: 2em
 
 @include media.respond-between(sm, md)
   .image-cropper
