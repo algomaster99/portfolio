@@ -68,7 +68,7 @@ export const NOT_TECHNICAL_SKILLS_1 = `Being at the forefront of handling IITR
 `
 
 export const NOT_TECHNICAL_SKILLS_2 = `Apart from work, I spend time speaking
-  at conferences, contriibute to open-source, swim, and play badminton.
+  at conferences, contribute to open-source, swim, and play badminton.
 `
 
 export const PROJECT_REQUEST = `I’m currently looking for a summer internship
