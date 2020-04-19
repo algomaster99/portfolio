@@ -52,7 +52,7 @@ const config: webpack.Configuration = {
         ],
       },
       {
-        test: /\.(jpe?g|svg)$/i,
+        test: /\.(jpe?g|svg|pdf)$/i,
         use: 'file-loader',
       },
     ],
