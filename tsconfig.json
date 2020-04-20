@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "./build/",
-    "jsx": "react",
     "esModuleInterop": true
   }
 }

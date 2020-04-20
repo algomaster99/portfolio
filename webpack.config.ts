@@ -2,6 +2,8 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
+const BUILD_REPOSITORY = 'algomaster99.github.io'
+
 /**
  * Parameters passed through command-line
  *
@@ -18,7 +20,7 @@ const mode = process.argv[3]
 const config: webpack.Configuration = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, BUILD_REPOSITORY),
     filename: 'bundle.js',
   },
   resolve: {
