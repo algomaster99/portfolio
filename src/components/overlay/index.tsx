@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Diamond from '../diamond'
-import { THEME } from '../../consts'
 
 import styles from './index.sass'
 
