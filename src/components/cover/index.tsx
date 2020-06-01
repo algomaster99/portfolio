@@ -15,7 +15,10 @@ class Cover extends React.PureComponent {
           <img src={me} className={styles.me} />
         </div>
         <div className={styles.fullName}>{FULL_NAME}</div>
-        <div className={styles.shortBio}>{SHORT_BIO}</div>
+        <div
+          dangerouslySetInnerHTML={{ __html: SHORT_BIO }}
+          className={styles.shortBio}
+        />
         <div className={styles.coverButton}>
           <Button link={resume} type={TYPE.MAIN} text="view résumé" newTab />
         </div>

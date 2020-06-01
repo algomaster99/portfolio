@@ -4,8 +4,9 @@ export const EMAIL = 'asharma@mt.iitr.ac.in'
 export const DESIGNER = 'vineet arora'
 export const DESIGNER_LINK = 'https://dribbble.com/vineetarora'
 export const SHORT_BIO = `A pre-final year undergrad at IIT Roorkee. Student at
-  Google Summer of Code 2019. Currently looking for an internship in Software
-  development.
+  Google Summer of Code 2019. Currently working with
+  <a href="https://www.accordproject.org/" target="__blank" rel="noopener noreferrer">Accord Project</a>
+  as a student in Google Summer of Code 2020.
 `
 
 export enum THEME {
@@ -71,8 +72,10 @@ export const NOT_TECHNICAL_SKILLS_2 = `Apart from work, I spend time speaking
   at conferences, contribute to open-source, swim, and play badminton.
 `
 
-export const PROJECT_REQUEST = `I’m currently looking for a summer internship
-  in software development. If you have an interesting project for me, let’s
+export const PROJECT_REQUEST = `I am always willing to contribute to impactful
+  projects. If you have an interesting project for me, let’s
   talk. You can send me an email at
   <a href="mailto:${EMAIL}">asharma@mt.iitr.ac.in</a>.
 `
+
+export const PORTFOLIO_REPOSITORY = 'https://github.com/algomaster99/portfolio'

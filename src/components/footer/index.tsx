@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DESIGNER, DESIGNER_LINK } from '../../consts'
+import { DESIGNER, DESIGNER_LINK, PORTFOLIO_REPOSITORY } from '../../consts'
 
 import styles from './index.sass'
 
@@ -13,6 +13,16 @@ class Footer extends React.PureComponent {
           <a href={DESIGNER_LINK} target="_blank" rel="noopener noreferrer">
             {DESIGNER}
           </a>{' '}
+        </span>
+        <span className={styles.footerText}>
+          Like my portfolio?{' '}
+          <a
+            href={PORTFOLIO_REPOSITORY}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fork it!
+          </a>
         </span>
       </footer>
     )

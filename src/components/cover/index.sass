@@ -4,6 +4,7 @@
 @use 'src/styles/media'
 @use 'src/styles/theme'
 @use 'src/styles/transition'
+@use 'src/styles/link'
 
 /* Image styles */
 $crop-size: 248
@@ -36,6 +37,7 @@ $margin-error: 20px
   width: #{$side}px
 
 .me
+  @include link.set-link-style(a)
   left: -24px
   position: relative
   transform: rotate(-$rotate-deg)
@@ -55,6 +57,7 @@ $margin-error: 20px
 .short-bio
   @include theme.which-theme('color', 'content')
   @include transition.transition(consts.$transition-duration, color)
+  @include link.set-link-style(a)
   font-size: 1.5em
   line-height: 36px
   text-align: center
