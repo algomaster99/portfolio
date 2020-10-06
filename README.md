@@ -92,4 +92,4 @@ import the icon in `src/components/skills/index.tsx` and append it to the
 9. Obviously, you are not restricted to the above edits. Feel free to fiddle
 around with code and add or remove features and make it personalized. If you
 think, you can add a great feature in the application, don't hesitate to send a
-pull request or even opening an issue. I will be happy to review it :relieved:.
+pull request or even opening an issue. I will be happy to review it :relieved: and merge it afterwards.
