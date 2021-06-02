@@ -5,6 +5,7 @@ import { FULL_NAME, SHORT_BIO, TYPE } from '../../consts'
 
 import me from '../../assets/me.jpeg'
 import resume from '../../assets/resume.pdf'
+import cv from '../../assets/cv.pdf'
 import styles from './index.sass'
 
 class Cover extends React.PureComponent {
@@ -20,7 +21,8 @@ class Cover extends React.PureComponent {
           className={styles.shortBio}
         />
         <div className={styles.coverButton}>
-          <Button link={resume} type={TYPE.MAIN} text="view résumé" newTab />
+          <Button link={resume} type={TYPE.MAIN} text="résumé" newTab />
+          <Button link={cv} type={TYPE.MAIN} text="cv" newTab />
         </div>
       </div>
     )

@@ -13,7 +13,6 @@ import {
   TECHNICAL_SKILLS_2,
   NOT_TECHNICAL_SKILLS_1,
   NOT_TECHNICAL_SKILLS_2,
-  PROJECT_REQUEST,
   TYPE,
 } from '../../consts'
 
@@ -40,12 +39,6 @@ class Content extends React.PureComponent {
           />
           <ContentBox content={NOT_TECHNICAL_SKILLS_2} />
           <SocialLinks />
-        </div>
-        <div className={styles.projectRequest}>
-          <ContentBox
-            header="got a project for me?"
-            content={PROJECT_REQUEST}
-          />
           <div className={styles.buttonContainer}>
             <Button link={`mailto:${EMAIL}`} type={TYPE.MAIN} text="email me" />
             <Button link={resume} type={TYPE.SIDE} text="view résumé" newTab />

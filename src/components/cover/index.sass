@@ -64,9 +64,14 @@ $margin-error: 20px
 
 .cover-button
   display: flex
+  flex-wrap: wrap
   justify-content: center
   margin-top: 2.5em
   width: 100%
+
+  a
+    flex-basis: 15%
+    margin: 0 1em
 
 @include media.respond-below(sm)
   .full-name
@@ -88,7 +93,7 @@ $margin-error: 20px
     margin-top: 3.2em
 
     a
-      width: 100%
+      flex-basis: 25%
 
 @include media.respond-between(sm, md)
   .image-cropper
